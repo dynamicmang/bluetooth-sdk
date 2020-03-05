@@ -1,5 +1,4 @@
 ### 1. SDK
-[ ![Download](null/packages/dynamicmang/maven/bluetooth-beta/images/download.svg?version=0.0.10) ](https://bintray.com/dynamicmang/maven/bluetooth-beta/0.0.9/link)
 
 ##### <a id="FUNCTION"></a> a) 개요
 -> BLE 장치 스캔과 연결을 진행해주는 라이브러리

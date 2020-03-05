@@ -1,5 +1,5 @@
 ### 1. SDK
-[ ![Download](null/packages/dynamicmang/maven/bluetooth-beta/images/download.svg?version=0.0.9) ](https://bintray.com/dynamicmang/maven/bluetooth-beta/0.0.9/link)
+[ ![Download](null/packages/dynamicmang/maven/bluetooth-beta/images/download.svg?version=0.0.10) ](https://bintray.com/dynamicmang/maven/bluetooth-beta/0.0.9/link)
 
 ##### <a id="FUNCTION"></a> a) 개요
 -> BLE 장치 스캔과 연결을 진행해주는 라이브러리
@@ -30,13 +30,28 @@ allprojects {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar']) 
     ....
-    implementation 'com.bluetooth.sdk:bluetooth-beta:0.0.9' // 의존성 추가
+    implementation 'com.bluetooth.sdk:bluetooth-beta:0.0.10' // 의존성 추가
 }
 ```
 
 ### 3. API
 
-##### <a id="API_1"></a> a) 장치 스캔
+##### <a id="API_1"></a> a) BaseActivity 상속
+-> 권한 설정 및 BLE 동작에 필요한 구성요소를 구성하기 위해 스캔을 사용할 Activity에 BaseActivity를 상속해 주세요.
+
+```java
+public class MainActivity extends BaseActivity {
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    
+}
+```
+
+##### <a id="API_1"></a> b) 장치 스캔
 
 -> 장치 스캔 상태를 전달 받을 콜백 인터페이스를 파라미터에 넣어 스캔 API 호출
 
@@ -56,7 +71,7 @@ private IScanResult iScanResult = new IScanResult() {
 };
 ```
 
-##### <a id="API_2"></a> b) 장치 연결
+##### <a id="API_2"></a> c) 장치 연결
 
 -> 장치 연결 상태를 전달 받을 콜백 인터페이스와 연결할(스캔된) 'BluetoothDevice'를 파라미터에 넣어 연결 API 호출
 

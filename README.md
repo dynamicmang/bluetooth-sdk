@@ -29,7 +29,7 @@ allprojects {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar']) 
     ....
-    implementation 'com.bluetooth.sdk:bluetooth-beta:0.0.10' // 의존성 추가
+    implementation 'com.bluetooth.sdk:bluetooth-beta:0.0.11' // 의존성 추가
 }
 ```
 
